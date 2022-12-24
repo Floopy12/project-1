@@ -33,21 +33,31 @@ class Drinks(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
+drink = []
+
 class Cheeses(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
+
+chees = []
 
 class Sausages(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
-class Milk(Positions):
+sauseg = []
+
+class Milks(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
+
+milk = []
 
 class Fruits(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
+
+fruit = []
 
 
 
