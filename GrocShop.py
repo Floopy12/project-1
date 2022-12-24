@@ -43,30 +43,26 @@ class Drinks(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
-<<<<<<< HEAD
-=======
 drink = []
 
->>>>>>> Classes
 class Cheeses(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
-<<<<<<< HEAD
-=======
+
 chees = []
 
->>>>>>> Classes
+
 class Sausages(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
-<<<<<<< HEAD
+
 class Milk(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
-=======
+
 sauseg = []
 
 class Milks(Positions):
@@ -75,16 +71,12 @@ class Milks(Positions):
 
 milk = []
 
->>>>>>> Classes
 class Fruits(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
-<<<<<<< HEAD
-=======
-fruit = []
 
->>>>>>> Classes
+fruit = []
 
 
 
