@@ -16,6 +16,7 @@ def start(message):
     keybord.add(button1, button2, button3)
     bot.send_message(message.chat.id, 'Що будемо робити?', reply_markup = keybord)
 
+
 @bot.callback_query_handler(func = lambda call: True)
 def callback(call):
     if call.data == 'Нова позиція':
@@ -25,7 +26,6 @@ def callback(call):
     elif call.data == 'Видалити позицію':
         bot.send_message(call.message.chat.id, 'Віберіть позицію, яку бажаете видалити')
     
-
 
 
 
@@ -43,22 +43,48 @@ class Drinks(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
+<<<<<<< HEAD
+=======
+drink = []
+
+>>>>>>> Classes
 class Cheeses(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
+<<<<<<< HEAD
+=======
+chees = []
+
+>>>>>>> Classes
 class Sausages(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
+<<<<<<< HEAD
 class Milk(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
+=======
+sauseg = []
+
+class Milks(Positions):
+    def __init__(self, name, price, photo):
+        super().__init__(name, price, photo)
+
+milk = []
+
+>>>>>>> Classes
 class Fruits(Positions):
     def __init__(self, name, price, photo):
         super().__init__(name, price, photo)
 
+<<<<<<< HEAD
+=======
+fruit = []
+
+>>>>>>> Classes
 
 
 
