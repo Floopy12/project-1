@@ -24,6 +24,33 @@ def start(message):
 
 
 
+class Positions:
+    def __init__(self, name, price, photo):
+        self.name = name
+        self.price = price
+        self.photo = photo
+
+class Drinks(Positions):
+    def __init__(self, name, price, photo):
+        super().__init__(name, price, photo)
+
+class Cheeses(Positions):
+    def __init__(self, name, price, photo):
+        super().__init__(name, price, photo)
+
+class Sausages(Positions):
+    def __init__(self, name, price, photo):
+        super().__init__(name, price, photo)
+
+class Milk(Positions):
+    def __init__(self, name, price, photo):
+        super().__init__(name, price, photo)
+
+class Fruits(Positions):
+    def __init__(self, name, price, photo):
+        super().__init__(name, price, photo)
+
+
 
 
 
