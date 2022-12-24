@@ -15,7 +15,6 @@ def start(message):
     button3 = telebot.types.InlineKeyboardButton('Видалити', callback_data = 'Видалити позицію')
     keybord.add(button1, button2, button3)
     bot.send_message(message.chat.id, 'Що будемо робити?', reply_markup = keybord)
-    
 
 
 
