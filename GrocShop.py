@@ -19,9 +19,9 @@ def start(message):
 @bot.callback_query_handler(func = lambda call: True)
 def callback(call):
     if call.data == 'Нова позиція':
-        bot.send_message(call.message.chat.id, 'Послідовно введіть: Назву, ціну та додайте фото')
+        bot.send_message(call.message.chat.id, 'Введіть: Класс, назву, ціну, додайте фото')
     elif call.data == 'Змінити позицію':
-        bot.send_message(call.message.chat.id, 'Послідовно введіть нові данні: Назву, ціну та додайте фото')
+        bot.send_message(call.message.chat.id, 'Послідовно введіть нові данні:Класс, назву, ціну, додайте фото')
     elif call.data == 'Видалити позицію':
         bot.send_message(call.message.chat.id, 'Віберіть позицію, яку бажаете видалити')
     
