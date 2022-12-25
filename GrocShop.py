@@ -1,19 +1,19 @@
 import telebot 
 import time
-
+from telebot import types
 
 
 TOKEN = '5961836068:AAGuMNBmcP7TAQnJLjB0vLq0PsgcQypqMiA'
 bot = telebot.TeleBot('5961836068:AAGuMNBmcP7TAQnJLjB0vLq0PsgcQypqMiA')
 
-ADMIN = 662765024
+ADMIN = [662765024]
 
 
 
 
 @bot.message_handler(commands = ['start'])
 def start(message):
-    if message.chat.id == ADMIN:
+    if  message.from_user.id in ADMIN:
         keybord = telebot.types.InlineKeyboardMarkup()
         button1 = telebot.types.InlineKeyboardButton('Додати', callback_data = 'Нова позиція')
         button2 = telebot.types.InlineKeyboardButton('Змінити', callback_data = 'Змінити позицію')
@@ -26,8 +26,7 @@ def start(message):
 @bot.callback_query_handler(func = lambda call: True)
 def callback(call):
     if call.data == 'Нова позиція':
-        bot.send_message(call.message.chat.id, 'Введіть: Класс, назву, ціну, додайте фото')  
-            
+        bot.send_message(call.message.chat.id, 'Введіть: Класс, назву, ціну, додайте фото')
     elif call.data == 'Змінити позицію':
         bot.send_message(call.message.chat.id, 'Послідовно введіть нові данні:Класс, назву, ціну, додайте фото')
     elif call.data == 'Видалити позицію':
@@ -93,6 +92,6 @@ fruit = []
 
 
 
-bot.infinity_polling()
+bot.polling(none_stop=True)
 
 
