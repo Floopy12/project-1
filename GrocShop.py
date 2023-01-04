@@ -3,8 +3,8 @@ import time
 from telebot import types
 
 
-TOKEN = '5961836068:AAGuMNBmcP7TAQnJLjB0vLq0PsgcQypqMiA'
-bot = telebot.TeleBot('5961836068:AAGuMNBmcP7TAQnJLjB0vLq0PsgcQypqMiA')
+TOKEN = '5970658595:AAHgZ_aUyFw-urXX2IZWx3pRfadQ6DNjS7M'
+bot = telebot.TeleBot(TOKEN)
 
 ADMIN = [662765024]
 
@@ -22,6 +22,14 @@ def start(message):
         bot.send_message(message.chat.id, 'Що будемо робити?', reply_markup = keybord)
     else:
         bot.send_message(message.chat.id, 'Перечень товаров')
+        total = ''
+        for type in position_types:
+            total += f'{type.name}:\n'
+            for position in positions:
+                if position.positiontype == type:
+                    total += f'{position.name}\nЦена: {position.price} грн\n'
+            total += '\n\n'
+        bot.send_message(message.chat.id, total)
 
 @bot.callback_query_handler(func = lambda call: True)
 def callback(call):
@@ -40,52 +48,27 @@ def callback(call):
 
 
 
-class Positions:
-    def __init__(self, name, price, photo):
+class Position:
+    def __init__(self, name, price, photo, possitiontype:'PositionType'):
         self.name = name
         self.price = price
         self.photo = photo
+        self.positiontype = possitiontype
 
-class Drinks(Positions):
-    def __init__(self, name, price, photo):
-        super().__init__(name, price, photo)
+class PositionType:
+    def __init__(self, name):
+        self.name = name
 
-drink = []
+# drinks = PositionType('Напитки')
+# laptops = PositionType('Ноутбуки')
+position_types = []
+position_types.append(PositionType('Нпитки'))
+position_types.append(PositionType('Ноутбуки'))
+positions = []
 
-class Cheeses(Positions):
-    def __init__(self, name, price, photo):
-        super().__init__(name, price, photo)
-
-
-chees = []
-
-
-class Sausages(Positions):
-    def __init__(self, name, price, photo):
-        super().__init__(name, price, photo)
-
-
-class Milk(Positions):
-    def __init__(self, name, price, photo):
-        super().__init__(name, price, photo)
-
-
-sauseg = []
-
-class Milks(Positions):
-    def __init__(self, name, price, photo):
-        super().__init__(name, price, photo)
-
-milk = []
-
-class Fruits(Positions):
-    def __init__(self, name, price, photo):
-        super().__init__(name, price, photo)
-
-
-fruit = []
-
-
+positions.append(Position('Coca-cola', 10, None, position_types[0]))
+positions.append(Position('sprite', 8, None, position_types[0]))
+positions.append(Position('ASUS',10000,None, position_types[1]))
 
 
 
